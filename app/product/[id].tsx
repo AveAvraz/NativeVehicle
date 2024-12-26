@@ -5,7 +5,7 @@ import { VStack } from "@/components/ui/vstack";
 import { Heading } from "@/components/ui/heading";
 import { Box } from "@/components/ui/box";
 import { Button, ButtonText } from "@/components/ui/button";
-import { useLocalSearchParams } from "expo-router"
+import { Stack, useLocalSearchParams } from "expo-router"
 import products from "@/assets/products.json"
 
 export default function productDetails() {
@@ -18,8 +18,9 @@ export default function productDetails() {
  
 
   return(
-
-    <Card className="p-5 rounded-lg max-w-[560px] m-3 flex-1 ">
+  <Box className="bg-red-300 flex-1 items-center p-3">
+      <Stack.Screen  options={{title: product.name}}/>
+    <Card className="p-5 rounded-lg   max-w-[960px] m-3 flex-1 ">
         <Image
           source={{
             uri: product.image,
@@ -53,6 +54,7 @@ export default function productDetails() {
           </Button>
         </Box>
       </Card>
+    </Box>
   )
 
 
